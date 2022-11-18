@@ -1,0 +1,20 @@
+pragma solidity >=0.7.0 <0.9.0;
+
+contract students{
+    struct stud{
+        int id;
+        string name;
+        int marks;
+    }
+    stud[] public students;
+    stud s;
+    function insertStudent(int id,string memory name,int marks) public
+    {
+        s=stud(id,name,marks);
+        students.push(s);
+    }
+    function GetStudentInfo()view public returns(int,string memory,int)
+    {
+        return(s.id,s.name,s.marks);
+    }
+}
